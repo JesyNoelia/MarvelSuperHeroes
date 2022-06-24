@@ -1,5 +1,7 @@
 package com.jesy.marvelsuperheroes.data.datasource.response
 
+import com.jesy.marvelsuperheroes.domain.model.CharacterModel
+
 data class Result(
     val comics: Comics,
     val description: String,
@@ -12,4 +14,17 @@ data class Result(
     val stories: Stories,
     val thumbnail: Thumbnail,
     val urls: List<Url>
-)
+){
+    fun toCharacter(): CharacterModel {
+        return CharacterModel(
+            id =id,
+            name=name,
+            description= description,
+            thumbnail = thumbnail.path,
+            thumbnailExt = thumbnail.extension,
+            comics = comics.items.map{
+                it.name
+            }
+        )
+    }
+}

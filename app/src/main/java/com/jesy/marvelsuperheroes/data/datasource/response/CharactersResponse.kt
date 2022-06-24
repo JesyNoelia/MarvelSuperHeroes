@@ -1,6 +1,6 @@
 package com.jesy.marvelsuperheroes.data.datasource.response
 
-data class CharacterResponse(
+data class CharactersResponse(
     val attributionHTML: String,
     val attributionText: String,
     val code: Int,
