@@ -29,7 +29,8 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/cover"
                 android:scaleType="fitXY"
-                app:url="@{character.thumbnail}" />
+                android:src="@drawable/marvel_small"
+                 />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -39,7 +40,7 @@
                 android:gravity="center"
                 android:lines="2"
                 android:padding="5dp"
-                android:text="@{character.name}"
+                android:text="Character name"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
