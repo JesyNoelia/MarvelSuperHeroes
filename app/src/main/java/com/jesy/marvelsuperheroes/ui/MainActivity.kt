@@ -1,10 +1,10 @@
-package com.jesy.marvelsuperheroes
+package com.jesy.marvelsuperheroes.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.jesy.marvelsuperheroes.databinding.ActivityMainBinding
+import com.jesy.marvelsuperheroes.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
