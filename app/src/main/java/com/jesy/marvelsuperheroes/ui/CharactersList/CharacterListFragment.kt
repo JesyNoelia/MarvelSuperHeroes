@@ -13,12 +13,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jesy.marvelsuperheroes.R
 import com.jesy.marvelsuperheroes.databinding.FragmentListBinding
 import com.jesy.marvelsuperheroes.domain.model.CharacterModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class CharacterListFragment : Fragment(R.layout.fragment_list) {
 
     private val charactersAdapter by lazy { CharacterListAdapter() }
