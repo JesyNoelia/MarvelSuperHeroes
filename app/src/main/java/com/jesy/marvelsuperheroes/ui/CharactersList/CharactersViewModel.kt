@@ -1,7 +1,10 @@
 package com.jesy.marvelsuperheroes.ui.CharactersList
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bumptech.glide.load.engine.Resource
+import com.jesy.marvelsuperheroes.domain.model.CharacterModel
 import com.jesy.marvelsuperheroes.domain.usecases.CharactersUseCase
 import com.jesy.marvelsuperheroes.util.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,8 +17,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CharactersViewModel @Inject constructor(
-    private val charactersUseCase: CharactersUseCase
-): ViewModel(){
+    private val charactersUseCase: CharactersUseCase,
+) : ViewModel() {
+    val characterListLiveData = MutableLiveData<List<CharacterModel>>()
+    var isLoading = MutableLiveData<Boolean>()
+    private var superheroList: List<CharacterModel> = emptyList()
+    val error = MutableLiveData<String>()
 
     private val _state = MutableStateFlow(MarvelListState())
     val state: StateFlow<MarvelListState> = _state.asStateFlow()

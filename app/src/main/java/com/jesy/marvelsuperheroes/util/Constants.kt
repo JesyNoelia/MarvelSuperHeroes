@@ -17,5 +17,9 @@ class Constants {
             val md = MessageDigest.getInstance("MD5")
             return BigInteger(1,md.digest(input.toByteArray())).toString(16).padStart(32, '0')
         }
+
+        const val IMAGE_LARGE_SIZE = "/standard_large"
+        const val IMAGE_XLARGE_SIZE = "/standard_xlarge"
+        const val DOT = "."
     }
 }
